@@ -8,9 +8,14 @@ Over time, however, I've come to see cracks in this philosophy, or at least the 
 
 The whole point of factoring out and re-using common code is to reduce the total amount of fallible logic and complexity in our applications. A typical DRY-based design or refactor affects a program's logic in the following ways:
 
-A. We may require additional logic to make the common logic "generic". For example, we might need new optional parameters to account for differing needs. We may have to handle more different edge cases or create new abstractions.
-B. We may need additional logic in each caller to make use of the common code, since the API for that code is no longer custom-tailored to the caller's specific use case.
-C. We can delete all redundant implementations of the common logic.
+<!-- https://stackoverflow.com/questions/13366820/how-do-you-make-lettered-lists-using-markdown -->
+<style type="text/css">
+    ol { list-style-type: upper-alpha; }
+</style>
+
+1. We may require additional logic to make the common logic "generic". For example, we might need new optional parameters to account for differing needs. We may have to handle more different edge cases or create new abstractions.
+2. We may need additional logic in each caller to make use of the common code, since the API for that code is no longer custom-tailored to the caller's specific use case.
+3. We can delete all redundant implementations of the common logic.
 
 The key here is the word *total*: if the gains from C don't exceed the losses from A and B, we've made our appliction more complex, not less.
 
