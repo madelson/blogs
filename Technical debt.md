@@ -12,11 +12,11 @@ So where does most of our "technical debt" actually come from if not from borrow
 
 The first source is simply unintentionally bad code. This code didn't necessarily take less time to develop, but it had bugs or design flaws that could have been caught and fixed during development but were not. If your team is facing this kind of issue, probably the first thing to look at is what your processes are for ensuring quality during development. Do you have a robust code review process? Do you do branch development? Design proposals? Are all developers writing and committing unit tests alongside each product code change? There isn't one magic process that fits every team's style, but if things are slipping through it might be worth trying something new. Investing in skill-building and learning for your team can also help here.
 
-## Unfinished code
+## 2. Unfinished code
 
 The second source is code that was left unfinished. Maybe we never got around to deleting dead code or removing an unused database column. If your team makes a habit of not finishing out features, take a look at your sprint planning and roadmap management process to see why things are falling through the cracks. As an example, on my team we are aggressive about representing all outstanding work in our issue tracker (we use Atlassian JIRA), and we use links between issues to make sure that every bit of work for a feature rolls up to the parent issue representing the overall project. We will not close an issue when there are still child issues that remain unresolved. Typically these finishing issues are very inexpensive, especially when what needs to be done is fresh in everyone's mind. The key is making sure they get included in tasking and estimation.
 
-## Requirements shift
+## 3. Requirements shift
 
 The third source is code that was actually fine when it was written but has not aged well. In some cases this is a scalability/performance issue, but in most cases it is a design issue. When this happens, we need to recognize that the requirements have changed and we need to adapt our code to the new requirements. This is a natural part of agile development. It can seem more expensive than simply bolting things on to the existing design, but the reality is that incremental refactoring is often much cheaper than either bolting on or infrequent massive refactoring. 
 
@@ -24,7 +24,7 @@ If we recognize the need for this kind of continuous code evolution, we can also
 
 (This post)[https://ronjeffries.com/xprog/articles/refactoring-not-on-the-backlog/] does a great job of illustrating this technique.
 
-## Industry shift
+## 4. Industry shift
 
 The final source is modernization. This includes things like updating dependencies, updating language/runtime versions, updating tooling, and switching to newer frameworks. Technology keeps marching forward, so the definition of "modern" will keep changing. These should be viewed as technical investments you can make in your codebase to improve developer productivity.
 
