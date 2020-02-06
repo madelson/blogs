@@ -1,8 +1,3 @@
-<!-- https://stackoverflow.com/questions/13366820/how-do-you-make-lettered-lists-using-markdown -->
-<style type="text/css">
-    ol { list-style-type: upper-alpha; }
-</style>
-
 As developers, most of us are inducted into the cult of common code and [Don't Repeat Yourself](https://en.wikipedia.org/wiki/Don't_repeat_yourself) (DRY) early on in our software engineering educations and careers. This was certainly the case for me. The idea sticks with us because it just makes so much sense: why write more code when you could write less? Why slog through making changes in dozens of places when you could have updated a single bit of centralized logic? Why re-invent the wheel when you can use a battle-tested implementation that already exists?
 
 Over time, however, I've come to see cracks in this philosophy, or at least the absolutist version of it. DRY is a powerful software engineering principle, but it is not the only software engineering principle. As codebases and teams get larger, a religious adherence to DRY can be crippling to maintainability and development time.
@@ -17,7 +12,7 @@ The whole point of factoring out and re-using common code is to reduce the total
 2. We may need additional logic in each caller to make use of the common code, since the API for that code is no longer custom-tailored to the caller's specific use case.
 3. We can delete all redundant implementations of the common logic.
 
-The key here is the word *total*: if the gains from C don't exceed the losses from A and B, we've made our appliction more complex, not less.
+The key here is the word *total*: if the gains from 3 don't exceed the losses from 1 and 2, we've made our appliction more complex, not less.
 
 Does this ever happen in practice? In my experience, this kind of complexity-increasing refactor happens all the time. All it takes is for one well-intentioned and devoutly-DRY developer to notice that some bit of logic is "repeated" in several places. Unfortunately, closer examination reveals that each usage is just a little bit different. The end result: a new "common" utility that is more complex than any of the original implementations. Furthermore, we end up with a correspondingly complex API that offsets much of the gain we'd otherwise see in each place the utility is used.
 
